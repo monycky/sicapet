@@ -1,0 +1,77 @@
+Cliente:
+Nome VARCHAR
+endereço VARCHAR
+telefone INT
+email VARCHAR
+insta VARCHAR
+fb VARCHAR
+datanascimento DATE
+CPF PK INT
+RG UK INT 
+Preferencia de pagamento VARCHAR
+
+
+/* Os clientes da Sica Pet levam seus animais de estimação para realizarem algum serviço, participar
+de algum dos eventos ou adquirir produtos*/
+
+Animais(do cliente)
+nome VARCHAR
+id animal INT PK
+raça VARCHAR
+espécia VARCHAR
+porte VARCHAR
+pedigree VARCHAR(caso tenha)
+CPF dono INT FK
+
+
+Ordem_de_servico
+Cd_servico INT PK
+id_cliente INT fk
+Mat_func INT 
+indicacao varchar
+data_solicitacao Date
+servico_solicitado FK
+preco_servico INT fk
+valor_total INT
+forma_pagamento varchar
+
+Servicos_ofertados
+cd_servico INT pk
+valor servico INT
+
+Produtos
+cd_produto INT pk
+descricao VARCHAR
+fornecedor VARCHAR
+preco INT
+Indicado VARCHAR
+
+Vendas
+cd_venda INT pk
+cpf_cliente FK
+id animal INT
+cd_produtos FK
+qtd_produtos INT
+valor_produtos INT
+data_venda DATE
+Mat func fk
+
+Funcionarios
+Mat_func INTPK
+Nome_func VARCHAR
+Animal_fav VARCHAR
+funcao Varchar
+
+Eventos
+descricao VARCHAR
+Data_relizacao DATE
+indicacao_especie VARHCAR
+id_evendo INT PK
+Mat_respo INT FK
+
+
+
+
+
+
+
