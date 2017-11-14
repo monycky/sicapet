@@ -1,0 +1,348 @@
+/**
+ * Description: Elements and collections of elements which can be reused.
+ * Version: 1.1.0
+ * Last update: 2016/08/18
+ * Author: Wojciech Mleczek
+ *
+ * Summary:
+ *
+ *    1. Clearfix
+ *    2. Icons
+ *    3. Grids
+ *        - 3.1. Grid row
+ *        - 3.2. Row column
+ *    4. Buttons
+ *    5. Tables
+ *        - 5.1. Vertical layout
+ *    6. Tree menu
+ *    7. Responsive
+ *    8. Typography
+ *    9. Common
+ */
+
+/* ==========================================================================
+   1. Clearfix
+      @see http://nicolasgallagher.com/micro-clearfix-hack/
+   ========================================================================== */
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+
+/* ==========================================================================
+   2. Icons
+   ========================================================================== */
+
+i[class*='icon-'],
+i[class^='icon-'] {
+    display: inline-block;
+    vertical-align: top;
+    width: 16px;
+    height: 16px;
+    background: url('../img/icons/sprite.png');
+    margin-right: 6px;
+    margin-top: 2px;
+}
+
+i.no-margin  { margin: 0px; }
+
+/* Row 1 */
+i.icon-folder           { background-position: -0px 0px; }
+i.icon-database         { background-position: -20px 0px; }
+i.icon-module           { background-position: -40px 0px; }
+i.icon-arrow-asc        { background-position: -60px 0px; }
+i.icon-relation         { background-position: -80px 0px; }
+i.icon-trigger-disabled { background-position: -100px 0px; }
+
+/* Row 2 */
+i.icon-table           { background-position: -0px -20px; }
+i.icon-view            { background-position: -20px -20px; }
+i.icon-key             { background-position: -40px -20px; }
+i.icon-arrow-desc      { background-position: -60px -20px; }
+i.icon-unique-key      { background-position: -80px -20px; }
+i.icon-user-unique-key { background-position: -100px -20px; }
+
+/* Row 3 */
+i.icon-function       { background-position: -0px -40px; }
+i.icon-procedure      { background-position: -20px -40px; }
+i.icon-chapter        { background-position: -40px -40px; }
+i.icon-error          { background-position: -60px -40px; }
+i.icon-trigger-active { background-position: -80px -40px; }
+i.icon-user-relation  { background-position: -100px -40px; }
+
+/* Row 4 */
+i.icon-user-key          { background-position: -0px -60px; }
+i.icon-unresolved-entity { background-position: -20px -60px; }
+i.icon-expand            { background-position: -40px -60px; }
+i.icon-collapse          { background-position: -60px -60px; }
+i.icon-check             { background-position: -80px -60px; }
+i.icon-nullable             { background-position: -100px -60px; }
+
+/* Other */
+i.icon-loader { background: url('../img/icons/loader.gif'); }
+i.icon-none   { background: none; }
+
+/* ==========================================================================
+   3. Grids
+   ========================================================================== */
+
+.grid:before,
+.grid:after {
+    content: " ";
+    display: table;
+}
+
+.grid:after {
+    clear: both;
+}
+
+/* 3.1. Grid row
+   ========================================================================== */
+.grid {
+    display: block;
+    width: 100%;
+}
+
+/* 3.2. Row column
+   ========================================================================== */
+.grid [class*='span'],
+.grid [class^='span'] {
+    display: block;
+    float: left;
+    overflow: hidden;
+}
+
+.grid .span0 { width: 0%; }
+.grid .span1 { width: 8.333333333333333%; }
+.grid .span2 { width: 16.66666666666667%; }
+.grid .span3 { width: 25%; }
+.grid .span4 { width: 33.33333333333333%; }
+.grid .span5 { width: 41.66666666666667%; }
+.grid .span6 { width: 50%; }
+.grid .span7 { width: 58.33333333333333%; }
+.grid .span8 { width: 66.66666666666667%; }
+.grid .span9 { width: 75%; }
+.grid .span10 { width: 83.33333333333333%; }
+.grid .span11 { width: 91.66666666666667%; }
+.grid .span12 { width: 100%; }
+
+@media (max-width: 900px) {
+    .grid [class*='span'],
+    .grid [class^='span'] {
+        display: block;
+        overflow: auto;
+        float: none;
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   4. Buttons
+   ========================================================================== */
+
+.btn {
+    display: inline-block;
+    border: 1px solid transparent;
+    background: transparent;
+    color: rgba(0, 0, 0, 0.85);
+    text-decoration: none;
+    padding: 10px 16px;
+}
+
+.btn:hover {
+    border-color: #aed3f3;
+    background: #dcf1f9;
+}
+
+/* ==========================================================================
+   5. Tables
+   ========================================================================== */
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+    table-layout: auto;
+    border-collapse:collapse;
+    border-spacing: 0;
+}
+
+@media (max-width: 900px) {
+    .table { table-layout: fixed; }
+}
+
+.table caption,
+.table-caption {
+    text-align: left;
+    font-size: 140%;
+    color: rgba(0, 0, 0, 0.4);
+    padding: 15px 0px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.table th,
+.table td,
+.table-td {
+    padding: 6px 12px;
+    border: 1px solid;
+    overflow: hidden;
+    min-width: 20px;
+    vertical-align: top;
+}
+
+.table th {
+    background: #f3f3f3; /* IE8 */
+    background: rgba(0, 0, 0, 0.05);
+    border-color: #cccccc; /* IE8 */
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.table td,
+.table-td {
+    border-color: #e6e6e6; /* IE8 */
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+@media all and (max-width: 1000px) {
+    .table { table-layout: auto; }
+
+    .table th,
+    .table td { width: auto !important; }
+}
+
+/* 5.1. Vertical layout
+   ========================================================================== */
+
+.table-vertical td {
+    padding: 3px 0;
+    background: transparent;
+    border: none;
+}
+
+.table-vertical td:first-child {
+    font-weight: bold;
+    padding-right: 24px;
+    width: 10%;
+}
+
+/* ==========================================================================
+   6. Tree menu
+   ========================================================================== */
+
+.tree {
+    display: block;
+    background: #fff;
+}
+
+.tree i[class*='icon-'],
+.tree i[class^='icon-'] {
+    margin-left: 2px;
+}
+
+.tree,
+.tree ul {
+    list-style-type: none;
+}
+    
+.tree li {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 4px 0;
+}
+
+.tree li:last-child,
+.tree ul li:last-child {
+    padding-bottom: 0;
+}
+
+.tree ul li { padding-left: 20px; }
+
+.tree ul { background: url('../img/tree/nono.png') top left repeat-y; }
+.tree ul li { background: url('../img/tree/nnno.png') top left no-repeat; }
+.tree ul li.expand { background: url('../img/tree/nnno-p.png') top left no-repeat; }
+.tree ul li.narrow { background: url('../img/tree/nnno-m.png') top left no-repeat; }
+.tree ul li:last-child { background: #fff url('../img/tree/nnoo.png') top left no-repeat; }
+.tree ul li.expand:last-child { background: #fff url('../img/tree/nnoo-p.png') top left no-repeat; }
+.tree ul li.narrow:last-child { background: #fff url('../img/tree/nnoo-m.png') top left no-repeat; }
+
+@media all and (max-width: 1000px) {
+    .tree li {
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 9px 0;
+    }
+    
+    .tree ul { padding-top: 5px; }
+    .tree ul li { padding-left: 20px; }
+    
+    .tree ul { background: url('../img/tree/mobile/nono.png') top left repeat-y; }
+    .tree ul li { background: url('../img/tree/mobile/nnno.png') top left no-repeat; }
+    .tree ul li.expand { background: url('../img/tree/mobile/nnno-p.png') top left no-repeat; }
+    .tree ul li.narrow { background: url('../img/tree/mobile/nnno-m.png') top left no-repeat; }
+    .tree ul li:last-child { background: #fff url('../img/tree/mobile/nnoo.png') top left no-repeat; }
+    .tree ul li.expand:last-child { background: #fff url('../img/tree/mobile/nnoo-p.png') top left no-repeat; }
+    .tree ul li.narrow:last-child { background: #fff url('../img/tree/mobile/nnoo-m.png') top left no-repeat; }
+}
+
+/* ==========================================================================
+   7. Responsive
+   ========================================================================== */
+
+.scroll-x {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+@media all and (max-width: 1000px) {
+    tr.only-mobile { display: table-row; }
+    th.only-mobile,
+    td.only-mobile { display: table-cell; }
+
+    tr.only-desktop { display: none; }
+    th.only-desktop,
+    td.only-desktop { display: none; }
+}
+
+@media all and (min-width: 1001px) {
+    tr.only-mobile { display: none; }
+    th.only-mobile,
+    td.only-mobile { display: none; }
+
+    tr.only-desktop { display: table-row; }
+    th.only-desktop,
+    td.only-desktop { display: table-cell; }
+}
+
+/* ==========================================================================
+   8. Typography
+   ========================================================================== */
+
+.font-regular { font-weight: normal; }
+.font-bold    { font-weight: bold; }
+
+.font-gray { color: #999999; }
+.font-blue { color: #4679C6; }
+
+/* ==========================================================================
+   9. Common
+   ========================================================================== */
+
+.trial { color: rgba(0,0,0,0.3) !important; }
+.trial-header { margin-left: 10px; }
+
+.trial-content {
+    margin-bottom: 15px; 
+    font-size: 26px;
+}

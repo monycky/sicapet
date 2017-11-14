@@ -1,0 +1,157 @@
+/**
+ * Description: Style for raw html tags.
+ * Version: 1.0.0
+ * Last update: 2016/08/12
+ * Author: Wojciech Mleczek
+ *
+ * Summary:
+ *
+ *    1. Size & Gutter
+ *    2. Typography
+ *    3. Images
+ *    4. Lists
+ *    5. Scrollbar
+ *    6. ERD Diagram
+ */
+
+/* ==========================================================================
+   1. Size & Gutter
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+hr {
+    height: 0;
+    border: 0;
+    border-bottom: 1px dotted #ebebeb;
+    margin: 30px 0;
+}
+
+h1, h2, table {
+    margin-bottom: 25px;
+}
+
+.scroll-x { margin-bottom: 25px; }
+.scroll-x > table { margin-bottom: 0px; }
+
+p {
+	padding: 5px 0px;
+}
+
+[data-page] {
+  display: none;
+}
+
+/* ==========================================================================
+   2. Typography
+   ========================================================================== */
+
+body {
+    font-family: "Segoe UI", "Open Sans", Arial;
+    font-size: 13px;
+    line-height: 150%;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+   font-weight: normal;
+	 font-family: "Open Sans", Arial;
+   line-height: normal;
+}
+
+h2 {
+    text-align: left;
+    font-size: 140%;
+    color: rgba(0, 0, 0, 0.4);
+    padding: 15px 0px;
+    font-weight: normal;
+    margin: 0;
+}
+
+a {
+    color: #4679C6;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #04589f;
+}
+
+a.clicked {
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   3. Images
+   ========================================================================== */
+
+a img {
+    border: none;
+}
+
+/* ==========================================================================
+   4. Lists
+   ========================================================================== */
+
+ol {
+    list-style-position: inside;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+ol li {
+    padding: 6px 0;
+}
+
+/* ==========================================================================
+   5. Scrollbar
+   ========================================================================== */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #2872ec; /* IE 8 */
+    background-color: rgba(0, 0, 0, 0.3);
+    border-right: 2px solid transparent;
+    background-clip: content-box;
+}
+
+/* ==========================================================================
+   6. ERD Diagram
+   ========================================================================== */
+
+.erd .node[data-href] {
+    cursor: pointer;
+}
+
+.erd .node[data-href]:hover rect.hoverable {
+    stroke: #5383ca;
+}
+
+.erd .node foreignObject p {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 0px;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.erd .node foreignObject div {
+    word-wrap: break-word;
+    display: table-cell;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+}
